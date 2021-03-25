@@ -1,11 +1,45 @@
 {
-  "name": "city-explorer-api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.1"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "**Author**: Jakob Lumpkin\r **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jakoblumpkin/city-explorer-api.git"
@@ -15,11 +49,5 @@
   "bugs": {
     "url": "https://github.com/jakoblumpkin/city-explorer-api/issues"
   },
-  "homepage": "https://github.com/jakoblumpkin/city-explorer-api#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "expres": "^0.0.5",
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/jakoblumpkin/city-explorer-api#readme"
 }
