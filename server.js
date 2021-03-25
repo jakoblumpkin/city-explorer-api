@@ -11,6 +11,7 @@ require('dotenv').config();
 const cors = require('cors');
 
 const { default: axios } = require('axios');
+//const superagent=require('superagent');
 
 // initalizing the express library so I can use it
 const app = express();
@@ -19,6 +20,8 @@ const app = express();
 app.use(cors());
 
 const PORT = process.env.PORT;
+
+//app.listen(PORT, () => console.log(`Listening ${PORT}`))
  
 app.get('/weather', handleWeather);
 app.get('/location', locationHandler);
@@ -49,13 +52,17 @@ async function locationHandler(req, res){
 
 
 async function handleWeather(req, res){
+  console.log('worked');
   const theCity=req.query;
   console.log(theCity);
   const url=`https://api.weatherbit.io/v2.0/current?lat=${theCity.lat}&lon=${theCity.lon}&key=${process.env.WEATHER_API_KEY}&include=minutely`;
   const result=await axios.get(url);
-  console.log(result.data.data);
-  
-  //res.status(200).send(result);
+
+  //grap data from api object
+  const temp=result.data.data[0].temp;
+  const description=result.data.data[0].weather.description;
+  const datatoPass='The Tempature is '+temp+' degrees celcius with '+ description+ ' as description.';
+  res.status(200).send(datatoPass);
   
 
 
